@@ -1,0 +1,87 @@
+<!-- GENERATED FILE - do not edit directly. Edit data/resume.json + templates/resume.md.j2, then run scripts/build.py -->
+
+# {{ basics.name }} — {{ basics.label }}
+
+{% for p in basics.profiles %}[{{ p.display }}]({{ p.url }}){% if not loop.last %} | {% endif %}{% endfor %}
+{{ "" }}
+{{ "" }}
+## Overview
+
+{{ basics.summary|md }}
+
+## Professional Experience
+
+{% for job in work %}
+### {{ job.position }} — [{{ job.name }}]({{ job.url }}) ({{ job.startDate }} -- {{ job.endDate|default('Present', true) }})
+
+{% for h in job.highlights %}- {{ h|md }}
+{% endfor %}
+
+{% endfor %}
+## Education
+
+{% for edu in education %}
+### {{ edu.studyType }} {{ edu.area }} — [{{ edu.institution }}]({{ edu.url }}) ({{ edu.startDate }} -- {{ edu.endDate }})
+
+{{ edu.summary|md }}
+{% if edu.score %}
+- **Grade:** {{ edu.score }}
+{% endif %}
+{% for h in edu.highlights %}- {{ h|md }}
+{% endfor %}
+
+{% endfor %}
+## Certifications
+
+{% for c in certificates %}
+### [{{ c.name }}]({{ c.url }}) — {{ c.issuer }} ({{ c.date }})
+
+{{ c.summary|md }}
+
+{% endfor %}
+## Technical Skills
+
+*{{ meta.skillsDisclaimer|md }}*
+
+- Hands-on experience with multiple cloud providers ({{ skills_by_name['Cloud Providers'][0].keywords|join(', ') }}).
+- Active contributor to several open source projects:
+{% for p in projects %}  - **[{{ p.name }}]({{ p.url }})** - {{ p.description }}
+{% endfor %}
+- Working knowledge of multiple programming and scripting languages:
+{% for s in skills_by_name['Programming & Scripting Languages'] %}  - **{{ s.level }}** - {{ s.keywords|join(', ') }}
+{% endfor %}
+- Expert knowledge of multiple DevOps tools:
+{% for s in skills if s.name.startswith('DevOps - ') %}  - **{{ s.name[9:] }}** - {{ s.keywords|join(', ') }}
+{% endfor %}
+- {{ skills_by_name['Scientific Computing & ML Libraries (Python)'][0].keywords|join(', ') }}.
+- Expert knowledge of data and ML engineering tools and frameworks:
+{% for s in skills if s.name.startswith('Data/ML Engineering - ') %}  - **{{ s.name[22:] }}** - {{ s.keywords|join(', ') }}
+{% endfor %}
+
+## Honors & Awards
+
+{% for a in awards %}
+### {% if a.url %}[{{ a.title }}]({{ a.url }}){% else %}{{ a.title }}{% endif %} — {{ a.awarder }} ({{ a.date }})
+
+{{ a.summary|md }}
+
+{% endfor %}
+## Articles & Blogs
+
+{% for pub in publications %}
+### [{{ pub.name }}]({{ pub.url }}) — {{ pub.publisher }} ({{ pub.releaseDate }})
+
+{{ pub.summary|md }}
+
+{% endfor %}
+## Talks & Events
+
+{% for t in talks %}
+### {{ t.name }} — [{{ t.event }}]({{ t.eventUrl }}) ({{ t.date }})
+
+{{ t.summary|md }}
+
+{% endfor %}
+## Languages
+
+{% for l in languages %}{{ l.language }} ({{ l.fluency }}){% if not loop.last %}, {% endif %}{% endfor %}

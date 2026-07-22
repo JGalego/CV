@@ -1,0 +1,68 @@
+> GENERATED FILE - do not edit directly. Edit data/resume.json + templates/resume.txt.j2, then run scripts/build.py
+> Machine-readable plain-text CV for {{ basics.name }}. Structured JSON is available at data/resume.json.
+
+{{ basics.name }} -- {{ basics.label }}
+{% for p in basics.profiles %}{{ p.display }} ({{ p.url }}){% if not loop.last %} | {% endif %}{% endfor %}
+
+OVERVIEW
+{{ basics.summary|txt }}
+
+PROFESSIONAL EXPERIENCE
+{% for job in work %}
+{{ job.position }} -- {{ job.name }} ({{ job.startDate }} -- {{ job.endDate|default('Present', true) }})
+{{ job.url }}
+{% for h in job.highlights %}- {{ h|txt }}
+{% endfor %}
+{% endfor %}
+EDUCATION
+{% for edu in education %}
+{{ edu.studyType }} {{ edu.area }} -- {{ edu.institution }} ({{ edu.startDate }} -- {{ edu.endDate }})
+{{ edu.summary|txt }}
+{% if edu.score %}Grade: {{ edu.score }}
+{% endif %}{% for h in edu.highlights %}- {{ h|txt }}
+{% endfor %}
+{% endfor %}
+CERTIFICATIONS
+{% for c in certificates %}
+{{ c.name }} -- {{ c.issuer }} ({{ c.date }}) -- {{ c.url }}
+{{ c.summary|txt }}
+
+{% endfor %}
+TECHNICAL SKILLS
+{{ meta.skillsDisclaimer|txt }}
+
+Cloud providers: {{ skills_by_name['Cloud Providers'][0].keywords|join(', ') }}
+Open source contributions:
+{% for p in projects %}- {{ p.name }}: {{ p.description }} ({{ p.url }})
+{% endfor %}
+Programming & scripting languages:
+{% for s in skills_by_name['Programming & Scripting Languages'] %}- {{ s.level }}: {{ s.keywords|join(', ') }}
+{% endfor %}
+DevOps tools:
+{% for s in skills if s.name.startswith('DevOps - ') %}- {{ s.name[9:] }}: {{ s.keywords|join(', ') }}
+{% endfor %}
+Scientific computing & ML libraries: {{ skills_by_name['Scientific Computing & ML Libraries (Python)'][0].keywords|join(', ') }}
+Data/ML engineering tools:
+{% for s in skills if s.name.startswith('Data/ML Engineering - ') %}- {{ s.name[22:] }}: {{ s.keywords|join(', ') }}
+{% endfor %}
+
+HONORS & AWARDS
+{% for a in awards %}
+{{ a.title }} -- {{ a.awarder }} ({{ a.date }}){% if a.url %} -- {{ a.url }}{% endif %}
+{{ a.summary|txt }}
+
+{% endfor %}
+ARTICLES & BLOGS
+{% for pub in publications %}
+{{ pub.name }} -- {{ pub.publisher }} ({{ pub.releaseDate }}) -- {{ pub.url }}
+{{ pub.summary|txt }}
+
+{% endfor %}
+TALKS & EVENTS
+{% for t in talks %}
+{{ t.name }} -- {{ t.event }} ({{ t.date }}) -- {{ t.eventUrl }}
+{{ t.summary|txt }}
+
+{% endfor %}
+LANGUAGES
+{% for l in languages %}{{ l.language }} ({{ l.fluency }}){% if not loop.last %}, {% endif %}{% endfor %}

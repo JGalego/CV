@@ -1,0 +1,308 @@
+%-------------------------
+% Resume in Latex
+% Author : João Galego
+% Based on: https://github.com/sb2nov/resume
+% License : MIT
+%
+% GENERATED FILE - do not edit directly.
+% Edit data/resume.json and templates/resume.tex.j2, then run scripts/build.py
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{fontawesome}
+\usepackage[normalem]{ulem}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\footskip}{4.5pt}
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \texttt{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\directlua{luaotfload.add_fallback
+   ("emojifallback",
+    {
+      "NotoColorEmoji:mode=harf;"
+    }
+   )}
+
+\setmainfont{texgyretermes-regular}[
+  Extension      = .otf ,
+  BoldFont       = texgyretermes-bold,
+  ItalicFont     = texgyretermes-italic,
+  BoldItalicFont = texgyretermes-bolditalic,
+  RawFeature={fallback=emojifallback}
+]
+
+%-------------------------------------------
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large \scshape CV // \VAR{basics.name|tex}} \\ \vspace{1pt}
+    \small
+    \BLOCK{for p in basics.profiles}\csname \VAR{p.icon}\endcsname~\href{\VAR{p.url|texurl}}{\BLOCK{ if p.monospace }\texttt{\VAR{p.display|tex}}\BLOCK{ else }\VAR{p.display|tex}\BLOCK{ endif }}\BLOCK{ if not loop.last } $|$ \BLOCK{ endif }\BLOCK{ endfor }
+\end{center}
+
+%-----------SHORT BIO-----------
+
+\section{Overview}
+
+\vspace{2mm}
+
+\justifying \VAR{basics.summary|tex}
+
+
+%-----------WORK EXPERIENCE-----------
+
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for job in work}
+    \resumeSubheading
+      {\VAR{job.position|tex}}{\VAR{job.startDate} -- \VAR{job.endDate|default('Present', true)}}
+      {\href{\VAR{job.url|texurl}}{\VAR{job.name|tex}}}{}
+    \vspace{2mm}
+        \begin{itemize}
+            \BLOCK{for h in job.highlights}
+            \item \VAR{h|tex}
+            \BLOCK{endfor}
+        \end{itemize}
+    \vspace{1mm}
+    \BLOCK{endfor}
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for edu in education}
+    \resumeSubheading
+      {\VAR{edu.studyType|tex} \VAR{edu.area|tex}}{\VAR{edu.startDate} -- \VAR{edu.endDate}}
+      {\href{\VAR{edu.url|texurl}}{\VAR{edu.institution|tex}}}{}
+
+        \vspace{3mm}
+
+        \VAR{edu.summary|tex}
+
+        \BLOCK{ if edu.highlights }
+        \begin{itemize}
+            \BLOCK{for h in edu.highlights}
+            \item \VAR{h|tex}
+            \BLOCK{endfor}
+        \end{itemize}
+        \BLOCK{ endif }
+
+        \vspace{1mm}
+    \BLOCK{endfor}
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+
+\section{Certifications}
+
+\def\badge_height{1.4cm}
+\BLOCK{for b in badges}\href{\VAR{b.url|texurl}}{\includegraphics[height=\badge_height]{\VAR{b.image}}}
+\BLOCK{endfor}
+
+\resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for c in certificates}
+    \resumeSubheading
+      {\href{\VAR{c.url|texurl}}{\VAR{c.name|tex}}}{\VAR{c.date}}
+      {\VAR{c.issuer|tex}}{}
+    \vspace{2mm}
+
+    \VAR{c.summary|tex}
+
+    \vspace{2mm}
+    \BLOCK{endfor}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+
+\section{Technical Skills}
+
+\vspace{2mm}
+
+{\small\textbf{Disclaimer:} \emph{\VAR{meta.skillsDisclaimer|tex}}}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+    \item Hands-on experience with multiple cloud providers (\VAR{skills_by_name['Cloud Providers'][0].keywords|join(', ')|tex}).
+
+    \item Active contributor to several open source projects:
+
+    \begin{itemize}
+        \BLOCK{for p in projects}
+        \item \textbf{\href{\VAR{p.url|texurl}}{\VAR{p.name|tex}}} - \VAR{p.description|tex}
+        \BLOCK{endfor}
+    \end{itemize}
+
+    \item Working knowledge of multiple programming and scripting languages:
+
+    \begin{itemize}
+        \BLOCK{for s in skills_by_name['Programming & Scripting Languages']}
+        \item \textbf{\VAR{s.level|tex}} - \VAR{s.keywords|join(', ')|tex}
+        \BLOCK{endfor}
+    \end{itemize}
+
+    \item Expert knowledge of multiple DevOps tools:
+
+    \begin{itemize}
+        \BLOCK{for s in skills if s.name.startswith('DevOps - ')}
+        \item \textbf{\VAR{s.name[9:]|tex}} - \VAR{s.keywords|join(', ')|tex}
+        \BLOCK{endfor}
+    \end{itemize}
+
+    \item \VAR{skills_by_name['Scientific Computing & ML Libraries (Python)'][0].keywords|join(', ')|tex}.
+
+    \item Expert knowledge of data and ML engineering tools and frameworks:
+
+    \begin{itemize}
+        \BLOCK{for s in skills if s.name.startswith('Data/ML Engineering - ')}
+        \item \textbf{\VAR{s.name[22:]|tex}} - \VAR{s.keywords|join(', ')|tex}
+        \BLOCK{endfor}
+    \end{itemize}
+\end{itemize}
+
+%-----------HONORS & AWARDS-----------
+
+\section{Honors \& Awards}
+  \resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for a in awards}
+    \resumeSubheading
+      {\BLOCK{ if a.url }\href{\VAR{a.url|texurl}}{\VAR{a.title|tex}}\BLOCK{ else }\VAR{a.title|tex}\BLOCK{ endif }}{\VAR{a.date}}
+      {\VAR{a.awarder|tex}}{}
+    \vspace{3mm}
+
+    \VAR{a.summary|tex}
+    \vspace{2mm}
+    \BLOCK{endfor}
+  \resumeSubHeadingListEnd
+
+%-----------ARTICLES & BLOGS-----------
+
+\section{Articles \& Blogs}
+  \resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for pub in publications}
+    \resumeSubheading
+      {\href{\VAR{pub.url|texurl}}{\VAR{pub.name|tex}}}{\VAR{pub.releaseDate}}
+      {\VAR{pub.publisher|tex}}{}
+    \vspace{3mm}
+
+    \VAR{pub.summary|tex}
+
+    \vspace{2mm}
+    \BLOCK{endfor}
+  \resumeSubHeadingListEnd
+
+%-----------TALKS & EVENTS-----------
+
+\section{Talks \& Events}
+  \resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for t in talks}
+    \resumeSubheading
+      {\VAR{t.name|tex}}{\VAR{t.date}}
+      {\href{\VAR{t.eventUrl|texurl}}{\VAR{t.event|tex}}}{}
+    \vspace{3mm}
+
+    \VAR{t.summary|tex}
+    \vspace{2mm}
+    \BLOCK{endfor}
+  \resumeSubHeadingListEnd
+
+%-----------LANGUAGES-----------
+
+\section{Languages}
+  \BLOCK{for l in languages}\texttt{\VAR{l.language|tex}} (\VAR{l.fluency|tex})\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }
+
+%-------------------------------------------
+\end{document}
