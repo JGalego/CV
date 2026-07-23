@@ -313,7 +313,7 @@ Scholarship for undergraduate students to work at the [*Center for Theoretical P
 
 ### Real-Time Bayesian AI for Mission-Critical Sensor Fusion in Maritime Command and Control — M. Roque, P. R. Nunes, N. Silva & **J. Galego** (2026)
 
-A Bayesian AI approach to real-time multi-sensor fusion for mission-critical maritime command and control systems, developed in the context of REPMUS (Robotic Experimentation and Prototyping augmented by Maritime Unmanned Systems). Paper submitted to EPIA 2026 (EPIA Conference on Artificial Intelligence).
+A Bayesian AI approach to real-time multi-sensor fusion for mission-critical maritime command and control systems, developed in the context of REPMUS (Robotic Experimentation and Prototyping augmented by Maritime Unmanned Systems). Paper accepted for publication at EPIA 2026 (EPIA Conference on Artificial Intelligence).
 
 ### Verified Tensor Operators for Safety-Critical ML: From Specification to Reference Implementation — J. Machado, R. Silva, L. Correnson, **J. Galego**, E. Jenn, H. Macedo, J. Souyris & J. Pinto (2026)
 
