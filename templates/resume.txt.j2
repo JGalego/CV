@@ -52,7 +52,13 @@ HONORS & AWARDS
 {{ a.summary|txt }}
 
 {% endfor %}
-ARTICLES & BLOGS
+ARTICLES
+{% for p in papers %}
+{{ p.title }} -- {{ p.authors|txt }} ({{ p.date }})
+{{ p.summary|txt }}
+
+{% endfor %}
+BLOGS
 {% for pub in publications %}
 {{ pub.name }} -- {{ pub.publisher }} ({{ pub.releaseDate }}) -- {{ pub.url }}
 {{ pub.summary|txt }}

@@ -4,14 +4,14 @@
 João Galego -- Head of AI
 linkedin.com/in/jgalego (https://www.linkedin.com/in/jgalego/) | github.com/JGalego (https://github.com/JGalego) | jgalego.github.io (https://jgalego.github.io)
 OVERVIEW
-João Galego is Head of AI at Critical Software (https://www.criticalsoftware.com/) and Invited Professor at Instituto Superior de Economia e Gestão (ISEG) (https://iseg.ulisboa.pt). He majored in Physics at Instituto Superior Técnico (IST) (https://tecnico.ulisboa.pt/) in Lisbon and obtained a postgraduate diploma in Forensic Studies from Instituto Superior de Ciências Sociais (ISCSP) (https://www.iscsp.ulisboa.pt/). He did doctoral work in Cognitive Science at ULisboa, where he used machine learning (ML) to decode complex brain signals and study motor cognition. Prior to joining Critical Software, João served as Lead ML Engineer at Siemens and held roles as Solutions Architect, ML Specialist, and Quantum Ambassador at AWS. At Critical Software, his mission is to bring AI to high-stakes domains and build ML that matters. When he is not working or teaching, you can usually find him browsing local bookstores, contributing to open-source projects, or enjoying quality time with his family.
+João Galego is Head of AI at Critical Software (https://www.criticalsoftware.com/) and Invited Professor at Instituto Superior de Economia e Gestão (ISEG) (https://iseg.ulisboa.pt). He majored in Physics at Instituto Superior Técnico (IST) (https://tecnico.ulisboa.pt/) in Lisbon and obtained a postgraduate diploma in Forensic Studies from Instituto Superior de Ciências Sociais (ISCSP) (https://www.iscsp.ulisboa.pt/). He later pursued doctoral research in Cognitive Science, where he used machine learning (ML) to decode brain signals and study how thoughts turn into actions. Prior to joining Critical Software, João served as Lead ML Engineer at Siemens and held roles as Solutions Architect, ML Specialist, and Quantum Ambassador at AWS. At Critical Software, his mission is to bring ML to high‑stakes domains and build AI that solves real problems for real people. Outside of work and teaching, he can often be found browsing local bookstores, contributing to open-source projects, or spending quality time with his family.
 
 PROFESSIONAL EXPERIENCE
 Head of AI -- Critical Software (2025 -- Present)
 https://www.criticalsoftware.com/
 - Collaborate with sales and pre-sales teams to understand client requirements, support the preparation of proposals, and present AI solutions. Communicate technical concepts to nontechnical stakeholders, ensuring a clear understanding of AI projects and their impact.
 - Oversee the end-to-end lifecycle of AI projects, from idea to production.
-- Solution Design: Design and architect AI solutions that meet client needs and align with business goals.
+- Design and architect AI solutions that meet client needs and align with business goals.
 - Engage with clients to collect requirements, conduct demos, and provide technical expertise during the sales process.
 - Ensure that all AI solutions comply with industry regulations, ethical standards, and company policies related to the development and deployment of responsible AI.
 - Conduct cutting-edge research on emerging AI technologies and trends, evaluating their potential impact and integration into our AI solutions to provide a competitive edge.
@@ -232,7 +232,14 @@ Associate Android Developer Fast Track Program Scholarship -- Google / Udacity (
 
 Junior Research Scholarship -- Fundação para a Ciência e Tecnologia (FCT) (2013)Scholarship for undergraduate students to work at the *Center for Theoretical Particle Physics* (CFTP) (http://cftp.ist.utl.pt/).
 
-ARTICLES & BLOGS
+ARTICLES
+Verified Tensor Operators for Safety-Critical ML: From Specification to Reference Implementation -- J. Machado, R. Silva, L. Correnson, J. Galego, E. Jenn, H. Macedo, J. Souyris & J. Pinto (2026)
+A Why3-based formal verification pipeline that turns high-level tensor operator specifications into provably correct C implementations for safety-critical ML systems. Paper accepted for publication at the 9th International Symposium on AI Verification (https://aiverification.org/2026) (SAIV2026) based on work developed as part of the Safe ONNX (SONNX) Working Group.
+
+Towards Verified Computation Graphs for Safety-Critical ML: From Static Model to Execution Semantics -- J. Machado, R. Silva, J. Galego, E. Jenn, H. Macedo, & J. Pinto (2026)
+A formal verification framework that models ONNX computation graphs with precise execution semantics and proves their correctness using a combination of Alloy-based model checking and Why3 deductive verification, enabling trustworthy execution of safety‑critical ML systems. Paper accepted for publication at the 8th International Workshop on AI and Formal Verification, Logic, Automata, and Synthesis (https://overlay.uniud.it/workshop/2026/) (OVERLAY2026 @ FLoC 2026) based on work developed as part of the Safe ONNX (SONNX) Working Group.
+
+BLOGS
 Hacking GraphRAG with Amazon Bedrock -- AWS Community (2024) -- https://community.aws/content/2j0H7GskVBBq4UJznR0GEtVIeV8/everything-s-a-graph-hacking-graphrag-with-amazon-bedrock
 Learn how to run GraphRAG pipelines backed by Amazon Bedrock using LiteLLM proxy.
 

@@ -266,9 +266,27 @@
     \BLOCK{endfor}
   \resumeSubHeadingListEnd
 
-%-----------ARTICLES & BLOGS-----------
+%-----------ARTICLES-----------
 
-\section{Articles \& Blogs}
+\section{Articles}
+
+\resumeSubHeadingListStart
+    \vspace{2mm}
+    \BLOCK{for p in papers}
+    \resumeSubheading
+      {\VAR{p.title|tex}}{\VAR{p.date}}
+      {\VAR{p.authors|tex}}{}
+    \vspace{3mm}
+
+    \VAR{p.summary|tex}
+
+    \vspace{2mm}
+    \BLOCK{endfor}
+\resumeSubHeadingListEnd
+
+%-----------BLOGS-----------
+
+\section{Blogs}
   \resumeSubHeadingListStart
     \vspace{2mm}
     \BLOCK{for pub in publications}
