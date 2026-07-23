@@ -233,6 +233,9 @@ Associate Android Developer Fast Track Program Scholarship -- Google / Udacity (
 Junior Research Scholarship -- Fundação para a Ciência e Tecnologia (FCT) (2013)Scholarship for undergraduate students to work at the *Center for Theoretical Particle Physics* (CFTP) (http://cftp.ist.utl.pt/).
 
 ARTICLES
+Real-Time Bayesian AI for Mission-Critical Sensor Fusion in Maritime Command and Control -- M. Roque, P. R. Nunes, N. Silva & J. Galego (2026)
+A Bayesian AI approach to real-time multi-sensor fusion for mission-critical maritime command and control systems, developed in the context of REPMUS (Robotic Experimentation and Prototyping augmented by Maritime Unmanned Systems). Paper submitted to EPIA 2026 (EPIA Conference on Artificial Intelligence).
+
 Verified Tensor Operators for Safety-Critical ML: From Specification to Reference Implementation -- J. Machado, R. Silva, L. Correnson, J. Galego, E. Jenn, H. Macedo, J. Souyris & J. Pinto (2026)
 A Why3-based formal verification pipeline that turns high-level tensor operator specifications into provably correct C implementations for safety-critical ML systems. Paper accepted for publication at the 9th International Symposium on AI Verification (https://aiverification.org/2026) (SAIV2026) based on work developed as part of the Safe ONNX (SONNX) Working Group.
 
